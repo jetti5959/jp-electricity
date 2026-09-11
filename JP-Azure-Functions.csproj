@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Project configuration -->
+	<PropertyGroup>
+
+		<!-- Using .NET 10 -->
+		<TargetFramework>net10.0</TargetFramework>
+
+		<!-- Azure Functions Runtime -->
+		<AzureFunctionsVersion>v4</AzureFunctionsVersion>
+
+		<!-- Required for Isolated Worker -->
+		<OutputType>Exe</OutputType>
+
+		<!-- Enable nullable reference types -->
+		<Nullable>enable</Nullable>
+
+		<!-- Automatically import common namespaces -->
+		<ImplicitUsings>enable</ImplicitUsings>
+
+	</PropertyGroup>
+
+	<!-- Azure Functions Packages -->
+	<ItemGroup>
+
+		<!-- Azure Functions Worker -->
+		<PackageReference Include="HotChocolate.AspNetCore" Version="15.1.12" />
+		<PackageReference Include="HotChocolate.AzureFunctions.IsolatedProcess" Version="15.1.12" />
+		<PackageReference Include="HotChocolate.Data.EntityFramework" Version="15.1.12" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker" Version="2.1.0" />
+
+		<!-- Worker SDK -->
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.0.7" OutputItemType="Analyzer" />
+
+		<!-- HTTP Trigger Extension -->
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="2.1.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+
+	</ItemGroup>
+
+</Project>
