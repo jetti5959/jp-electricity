@@ -59,6 +59,7 @@ C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\WorkerExtensions.AssemblyInfoInputs.cache
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\WorkerExtensions.AssemblyInfo.cs
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\WorkerExtensions.csproj.CoreCompileInputs.cache
+C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\WorkerExtensions.sourcelink.json
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\WorkerEx.422953E6.Up2Date
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\Microsoft.Azure.Functions.Worker.Extensions.dll
 C:\Users\HiteshJetti\OneDrive - GBIT Inc\Documents\JP BACKEND\JP-Azure-Functions\obj\Debug\net10.0\WorkerExtensions\obj\Release\net8.0\refint\Microsoft.Azure.Functions.Worker.Extensions.dll

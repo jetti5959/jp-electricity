@@ -3,59 +3,36 @@ using JPAzureFunctions.Models;
 
 namespace JPAzureFunctions.Data
 {
-    // Database Context
-    // This class connects Entity Framework Core with PostgreSQL.
+    /// <summary>
+    /// Entity Framework Core database context.
+    /// Manages the database connection and entity mappings.
+    /// </summary>
     public class AppDbContext : DbContext
     {
-        // Constructor receives database configuration from Program.cs
+        /// <summary>
+        /// Initializes the database context with configuration options.
+        /// </summary>
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
         }
 
-        // Users table
+        /// <summary>
+        /// Represents the Users table in the database.
+        /// </summary>
         public DbSet<User> Users { get; set; }
 
-        // Bills table
-        public DbSet<Bill> Bills { get; set; }
-
-        // Payments table
-        public DbSet<Payment> Payments { get; set; }
-
-        // Configure Primary Keys and Foreign Keys
+        /// <summary>
+        /// Configures entity mappings and database relationships.
+        /// </summary>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Call the base configuration.
             base.OnModelCreating(modelBuilder);
 
-            // Users table Primary Key
+            // Configure the primary key for the User entity.
             modelBuilder.Entity<User>()
                 .HasKey(u => u.Id);
-
-            // Bills table Primary Key
-            modelBuilder.Entity<Bill>()
-                .HasKey(b => b.Id);
-
-            // Payments table Primary Key
-            modelBuilder.Entity<Payment>()
-                .HasKey(p => p.Id);
-
-            // One User can have Many Bills
-            modelBuilder.Entity<Bill>()
-                .HasOne(b => b.User)
-                .WithMany(u => u.Bills)
-                .HasForeignKey(b => b.UserId);
-
-            // One User can have Many Payments
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.User)
-                .WithMany(u => u.Payments)
-                .HasForeignKey(p => p.UserId);
-
-            // One Bill can have Many Payments
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.Bill)
-                .WithMany()
-                .HasForeignKey(p => p.BillId);
         }
     }
 }
