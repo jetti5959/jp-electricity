@@ -1,0 +1,31 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  projectPath: 'JP-Azure-Functions.csproj'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Install .NET 10 SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '10.0.x'
+
+- script: dotnet restore $(projectPath)
+  displayName: 'Restore NuGet Packages'
+
+- script: dotnet build $(projectPath) --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build Project'
+
+- script: dotnet publish $(projectPath) --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
+  displayName: 'Publish Azure Function Project'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifact'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
